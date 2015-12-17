@@ -19,7 +19,7 @@ A demo web application on OSX/Linux using:
 
 - Install npm
 
-- Install docker (docker-tools for non-linux platform)
+- Install docker (docker-toolbox for non-linux platform)
 
 - Install gulp
 
@@ -40,7 +40,7 @@ $ gulp init
 ```
 
 - Open the web application
-    - If you're using docker-tools on non-linux platform, you need to find your container host ip, e.g.
+    - If you're using docker-toolbox on non-linux platform, you need to find your container host ip, e.g.
 
     ```bash
     $ docker-machine ip default
