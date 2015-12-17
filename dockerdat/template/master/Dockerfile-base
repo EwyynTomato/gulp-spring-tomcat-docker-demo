@@ -1,0 +1,10 @@
+<%= warning %>
+
+FROM tomcat:8.0.28-jre8
+
+LABEL name=gdtdemo-base
+
+RUN apt-get update
+RUN apt-get install -y nano
+
+COPY ./dockerdat/res/bashrc /root/.bashrc

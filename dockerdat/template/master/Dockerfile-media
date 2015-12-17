@@ -1,0 +1,7 @@
+<%= warning %>
+
+FROM tianon/true
+
+LABEL name=gdtdemo-media
+
+VOLUME ["/var/media/"]

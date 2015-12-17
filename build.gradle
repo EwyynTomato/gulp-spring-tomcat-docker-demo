@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+version = '1.0'
+
+buildscript {
+    ext {
+        springBootVersion = '1.2.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+war {
+    from('config') {
+        //Add configuration files into classpath
+        include 'application.yml'
+        into('WEB-INF/classes/config/')
+    }
+    baseName = 'erwintest'
+    version =  "${version}"
+    archiveName = "gdtdemo.war"
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

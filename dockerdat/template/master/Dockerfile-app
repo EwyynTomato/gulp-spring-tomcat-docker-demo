@@ -1,0 +1,8 @@
+<%= warning %>
+
+FROM gdtdemo/base
+
+LABEL name=gdtdemo-app
+
+COPY ./dockerdat/template/<%= environment %>/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+COPY ./build/libs/gdtdemo.war /usr/local/tomcat/webapps/gdtdemo.war

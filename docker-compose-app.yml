@@ -1,0 +1,14 @@
+######################################################################################################
+# WARNING: This file is generated from template, please edit this file using MASTER/<template> and <environment>/string.js
+######################################################################################################
+
+app:
+  container_name: gdtdemo_app
+  image: gdtdemo/app
+  ports:
+      - "8088:8080"
+  volumes_from:
+    - media
+media:
+  container_name: gdtdemo_media
+  image: gdtdemo/media
